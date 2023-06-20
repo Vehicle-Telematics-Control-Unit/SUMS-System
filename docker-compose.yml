@@ -14,7 +14,6 @@ services:
       - 127.0.0.1:5465:127.0.0.1:5000
     volumes:
       - /docker-registry/data:/var/lib/registry
-      - /opt/auth:/auth
       - ./DockerRegistry/config.yml:/etc/docker/registry/config.yml
     networks:
       SUMS-System-Network:
