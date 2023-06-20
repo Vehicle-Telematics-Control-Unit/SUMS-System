@@ -1,0 +1,52 @@
+version: 0.1
+log:
+  accesslog:
+    disabled: true
+  level: debug
+  formatter: text
+  fields:
+    service: registry
+    environment: staging
+hooks:
+  - type: mail
+    levels:
+      - panic
+    options:
+      smtp:
+        addr: smtp.gmail.com:465
+        username: valeo.vehicleplus@gmail.com
+        password: cmiwwbklrshesjro
+        insecure: true
+      from: valeo.vehicleplus@gmail.com
+      to:
+        - moustafawahdan55@gmail.com
+storage:
+  filesystem:
+    rootdirectory: /var/lib/registry
+cache:
+  blobdescriptor: inmemory
+  blobdescriptorsize: 10000
+maintenance:
+  uploadpurging:
+    enabled: true
+    age: 168h
+    interval: 24h
+    dryrun: false
+  readonly:
+    enabled: false
+redirect:
+  disable: false
+auth:
+  htpasswd:
+    realm: basic-realm
+    path: /auth/htpasswd
+notifications:
+  events:
+    includereferences: true
+  endpoints:
+    - name: alistener
+      disabled: false
+      url: http://163.30.0.10/WebHook
+      timeout: 1s
+      threshold: 10
+      backoff: 1s
