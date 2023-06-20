@@ -11,7 +11,7 @@ services:
     restart: always
     image: registry:2
     ports:
-      - 5000:5000
+      - 127.0.0.1:5465:5000
     volumes:
       - /docker-registry/data:/var/lib/registry
       - ./DockerRegistry/config.yml:/etc/docker/registry/config.yml
