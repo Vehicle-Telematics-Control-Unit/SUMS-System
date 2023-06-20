@@ -8,7 +8,7 @@ log:
     service: registry
     environment: staging
 http:
-  addr: localhost:5000
+  addr: 127.0.0.1:5000
 hooks:
   - type: mail
     levels:
@@ -25,23 +25,6 @@ hooks:
 storage:
   filesystem:
     rootdirectory: /var/lib/registry
-cache:
-  blobdescriptor: inmemory
-  blobdescriptorsize: 10000
-maintenance:
-  uploadpurging:
-    enabled: true
-    age: 168h
-    interval: 24h
-    dryrun: false
-  readonly:
-    enabled: false
-redirect:
-  disable: false
-auth:
-  htpasswd:
-    realm: basic-realm
-    path: /auth/htpasswd
 notifications:
   events:
     includereferences: true
