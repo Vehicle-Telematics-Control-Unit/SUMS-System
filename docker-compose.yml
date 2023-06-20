@@ -4,7 +4,7 @@ networks:
   SUMS-System-Network:
     ipam:
       config:
-        - subnet: 163.30.0.0/16
+        - subnet: 163.40.0.0/16
 
 services:
   registry:
@@ -18,5 +18,5 @@ services:
       - ./DockerRegistry/config.yml:/etc/docker/registry/config.yml
     networks:
       SUMS-System-Network:
-          ipv4_address: 163.30.0.5
+          ipv4_address: 163.40.0.5
   
