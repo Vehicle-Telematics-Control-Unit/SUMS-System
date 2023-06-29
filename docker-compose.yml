@@ -13,9 +13,21 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - /docker-registry/data:/var/lib/registry
+      - ./docker-registry/data:/var/lib/registry
       - ./DockerRegistry/config.yml:/etc/docker/registry/config.yml
     networks:
       SUMS-System-Network:
           ipv4_address: 163.40.0.5
+  auth-server-service:
+    image: registry.digitalocean.com/vehicle-plus/sums-agent:latest
+    restart: always
+    command: bash -c "dotnet SUMS-Agent.dll"
+    volumes:
+      - ./appsettings.json:/app/appsettings.json
+      - ./results.json:/info/request.json
+    networks:
+      MQTT-Broker-Network:
+        ipv4_address: 163.40.0.10
+    ports:
+      - 6150:80
   

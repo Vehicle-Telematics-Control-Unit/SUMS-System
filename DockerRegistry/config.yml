@@ -25,13 +25,23 @@ hooks:
 storage:
   filesystem:
     rootdirectory: /var/lib/registry
+maintenance:
+  uploadpurging:
+    enabled: true
+    age: 168h
+    interval: 24h
+    dryrun: false
+  readonly:
+    enabled: false
 notifications:
   events:
     includereferences: true
+    headers:
+        Authorization: [Basic VmVoaWNsZXBsdXMuY2xvdWQ6UEBzc3cwcmQxMjM=]
   endpoints:
     - name: alistener
       disabled: false
-      url: http://163.30.0.10/WebHook
-      timeout: 1s
+      url: https://vehicleplus.cloud/OTA
+      timeout: 10s
       threshold: 10
       backoff: 1s
