@@ -7,17 +7,17 @@ networks:
         - subnet: 163.40.0.0/16
 
 services:
-  # registry:
-  #   restart: always
-  #   image: registry:2
-  #   ports:
-  #     - 5000:5000
-  #   volumes:
-  #     - ./docker-registry/data:/var/lib/registry
-  #     - ./DockerRegistry/config.yml:/etc/docker/registry/config.yml
-  #   networks:
-  #     SUMS-System-Network:
-  #         ipv4_address: 163.40.0.5
+  registry:
+    restart: always
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - ./docker-registry/data:/var/lib/registry
+      - ./DockerRegistry/config.yml:/etc/docker/registry/config.yml
+    networks:
+      SUMS-System-Network:
+          ipv4_address: 163.40.0.5
   auth-server-service:
     image: registry.digitalocean.com/vehicle-plus/sums-agent:latest
     restart: always

@@ -1,0 +1,9 @@
+docker-compose.yml
+docker-registry/data/docker/registry/v2/blobs/sha256/3f/3f94e4e483ea634d7ab0b63649b8f72f8b721d4c626297fd0edae0abea1df9e9/data
+docker-registry/data/docker/registry/v2/blobs/sha256/17/179d09b52b47f63edbbdfc6f86cbc0e6e138f703472c053387836887786b4014/data
+docker-registry/data/docker/registry/v2/blobs/sha256/99/99284ca6cea039c7784d1414608c6e846dd56830c2a13e1341be681c3ffcc8ac/data
+docker-registry/data/docker/registry/v2/repositories/myfirstimage/_layers/sha256/3f94e4e483ea634d7ab0b63649b8f72f8b721d4c626297fd0edae0abea1df9e9/link
+docker-registry/data/docker/registry/v2/repositories/myfirstimage/_layers/sha256/99284ca6cea039c7784d1414608c6e846dd56830c2a13e1341be681c3ffcc8ac/link
+docker-registry/data/docker/registry/v2/repositories/myfirstimage/_manifests/revisions/sha256/179d09b52b47f63edbbdfc6f86cbc0e6e138f703472c053387836887786b4014/link
+docker-registry/data/docker/registry/v2/repositories/myfirstimage/_manifests/tags/latest/current/link
+docker-registry/data/docker/registry/v2/repositories/myfirstimage/_manifests/tags/latest/index/sha256/179d09b52b47f63edbbdfc6f86cbc0e6e138f703472c053387836887786b4014/link

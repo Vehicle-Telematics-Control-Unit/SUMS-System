@@ -35,13 +35,19 @@ maintenance:
     enabled: false
 notifications:
   events:
-    includereferences: true
+    includereferences: false
     headers:
         Authorization: [Basic VmVoaWNsZXBsdXMuY2xvdWQ6UEBzc3cwcmQxMjM=]
+
   endpoints:
     - name: alistener
       disabled: false
-      url: https://vehicleplus.cloud/OTA
-      timeout: 10s
+      url: https://vehicleplus.cloud/OTA/notify
+      timeout: 1s
       threshold: 10
       backoff: 1s
+      ignoredmediatypes:
+        - application/octet-stream
+      ignore:
+        mediatypes:
+           - application/octet-stream
