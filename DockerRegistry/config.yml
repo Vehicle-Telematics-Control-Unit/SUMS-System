@@ -43,8 +43,8 @@ notifications:
     - name: alistener
       disabled: false
       url: https://vehicleplus.cloud/OTA/notify
-      timeout: 1s
-      threshold: 10
+      timeout: 30s
+      threshold: 5
       backoff: 1s
       ignoredmediatypes:
         - application/octet-stream
