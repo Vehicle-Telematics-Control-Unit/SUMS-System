@@ -1,0 +1,25 @@
+{
+    "ConnectionStrings": {
+      "AdminIdentityConnection": "Server=163.40.0.15;Port=5432;Database=AdminConsole;User Id=postgres;Password=postgres;",
+      "TcuServerConnection": "Server=vehicleplus.cloud;Port=5435;Database=TCU;User Id=postgres;Password=postgres;"
+    },
+    "Logging": {
+        "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Warning",
+        "Microsoft.Hosting.Lifetime": "Information"
+        }
+      },
+    "IdentityServer": {
+      "Clients": {
+        "Admin_Console": {
+          "Profile": "IdentityServerSPA"
+        }
+      },
+      "Key": {
+        "Type": "Development"
+      }
+    },
+  "AllowedHosts": "*"
+  }
+  

@@ -18,16 +18,38 @@ services:
     networks:
       SUMS-System-Network:
           ipv4_address: 163.40.0.5
-  auth-server-service:
+  agent-service:
     image: registry.digitalocean.com/vehicle-plus/sums-agent:latest
     restart: always
     command: bash -c "dotnet SUMS-Agent.dll"
     volumes:
       - ./appsettings.json:/app/appsettings.json
-      - ./results.json:/info/request.json
     networks:
       SUMS-System-Network:
         ipv4_address: 163.40.0.10
     ports:
       - 6150:80
-  
+  database-service:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - /home/postgres/admin-database/:/var/lib/postgresql/data
+    ports:
+      - 5445:5432
+    networks:
+      Admin-Console-Network:
+        ipv4_address: 163.40.0.15
+  admin-console:
+    image: registry.digitalocean.com/vehicle-plus/admin-console:latest
+    restart: always
+    command: bash -c "dotnet Admin-Console.dll"
+    volumes:
+      - ./adminSettings.json:/app/appsettings.json
+    networks:
+      SUMS-System-Network:
+        ipv4_address: 163.40.0.20
+    ports:
+      - 6250:5000
