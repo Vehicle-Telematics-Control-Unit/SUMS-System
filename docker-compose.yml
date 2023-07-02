@@ -40,7 +40,7 @@ services:
     ports:
       - 5445:5432
     networks:
-      Admin-Console-Network:
+      SUMS-System-Network:
         ipv4_address: 163.40.0.15
   admin-console:
     image: registry.digitalocean.com/vehicle-plus/admin-console:latest
