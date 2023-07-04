@@ -24,6 +24,7 @@ services:
     command: bash -c "dotnet SUMS-Agent.dll"
     volumes:
       - ./appsettings.json:/app/appsettings.json
+      - ./fcm/vehicleplus-notifications.json:/fcm/vehicleplus-notifications.json
     networks:
       SUMS-System-Network:
         ipv4_address: 163.40.0.10
